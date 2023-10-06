@@ -1,18 +1,16 @@
-numbers = [1,4,23,3,2,1,0,9,7]
-
-def sort_imperative(numbers):
-    for i in range(len(numbers)):
-        for j in range(i+1, len(numbers)):
-            if numbers[i] < numbers[j]:
-                temp = numbers[i]
-                numbers[i] = numbers[j]
-                numbers[j] = temp
-    print(numbers)
-
-
-def sort_declarative(numbers):
-    numbers.sort(reverse = True)  
-    print(numbers)
-
-sort_imperative(numbers)
-sort_declarative(numbers)
+def binarySearch(alist, item):
+	    first = 0
+	    last = len(alist)-1
+	    found = False
+	
+	    while first<=last and not found:
+	        midpoint = (first + last)//2
+	        if alist[midpoint] == item:
+	            found = True
+	        else:
+	            if item < alist[midpoint]:
+	                last = midpoint-1
+	            else:
+	                first = midpoint+1
+	
+	    return found
